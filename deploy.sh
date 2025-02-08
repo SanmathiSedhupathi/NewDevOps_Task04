@@ -17,10 +17,10 @@ docker build -t sanmathisedhupathi/devopstask04 .
 # Docker login securely
 echo "🔑 Logging in to Docker Hub..."
 echo "08-Sep-2004" | docker login -u "sanmathisedhupathi" --password-stdin
-docker tag devopstask04 sanmathisedhupathi/devopstask04
+docker tag devopstask04 sanmathisedhupathi/devopstask04:latest
 # Push the new image
 echo "🚀 Pushing the Docker image to Docker Hub..."
-docker push sanmathisedhupathi/devopstask04
+docker push sanmathisedhupathi/devopstask04:latest
 
 # Deploy to Minikube without using a separate YAML file
 echo "📦 Deploying to Minikube..."
@@ -46,5 +46,6 @@ spec:
           ports:
             - containerPort: 80
 EOF
-
+echo "🔌 Exposing the deployment as a service..."
+kubectl expose deployment devopstask04 --type=NodePort --name=devopstask04-service --port=80 --target-port=80 --name=devopstask04-service
 echo "✅ Deployment completed successfully!"
