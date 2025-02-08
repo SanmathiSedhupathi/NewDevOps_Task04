@@ -17,7 +17,7 @@ docker build -t sanmathisedhupathi/devopstask04 .
 # Docker login securely
 echo "🔑 Logging in to Docker Hub..."
 echo "08-Sep-2004" | docker login -u "sanmathisedhupathi" --password-stdin
-
+docker tag devopstask04 sanmathisedhupathi/devopstask04
 # Push the new image
 echo "🚀 Pushing the Docker image to Docker Hub..."
 docker push sanmathisedhupathi/devopstask04
