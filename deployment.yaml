@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopstask04
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devopstask04
+  template:
+    metadata:
+      labels:
+        app: devopstask04
+    spec:
+      containers:
+        - name: devopstask04
+          image: mohamedathikr/devopstask04:latest
+          ports:
+            - containerPort: 80
