@@ -12,15 +12,15 @@ kubectl config use-context minikube
 
 # Docker build process
 echo "⚙️ Building the Docker image..."
-docker build -t mohamedathikr/devopstask04 .
+docker build -t sanmathisedhupathi/devopstask04 .
 
 # Docker login securely
 echo "🔑 Logging in to Docker Hub..."
-echo "qwerty786!A" | docker login -u "mohamedathikr" --password-stdin
+echo "08-Sep-2004" | docker login -u "sanmathisedhupathi" --password-stdin
 
 # Push the new image
 echo "🚀 Pushing the Docker image to Docker Hub..."
-docker push mohamedathikr/devopstask04
+docker push sanmathisedhupathi/devopstask04
 
 # Deploy to Minikube without using a separate YAML file
 echo "📦 Deploying to Minikube..."
@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
         - name: devopstask04
-          image: mohamedathikr/devopstask04
+          image: sanmathisedhupathi/devopstask04
           ports:
             - containerPort: 80
 EOF
